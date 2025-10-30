@@ -1,6 +1,7 @@
 # Automated_AI_Pipeline
 Palona AI project 
 Flow Chart: 
+
 User enters a topic → Frontend sends request to Flask API.
 
 Flask API triggers the Campaign Workflow Engine.

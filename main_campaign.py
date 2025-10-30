@@ -17,25 +17,8 @@ BASE_URL = "https://api.hubapi.com"
 OPENAI_MODEL = "gpt-4o-mini"
 client = OpenAI(api_key=OPENAI_API_KEY)
 
-# === SETUP LOCAL DATABASE ===
 def init_db():
-    conn = sqlite3.connect("campaigns.db")
-    c = conn.cursor()
-    c.execute("""
-        CREATE TABLE IF NOT EXISTS campaigns (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            topic TEXT,
-            persona TEXT,
-            open_rate REAL,
-            click_rate REAL,
-            unsubscribe_rate REAL,
-            summary TEXT,
-            timestamp TEXT
-        )
-    """)
-    conn.commit()
-    conn.close()
-def init_db():
+"""LOCAL DATABASE"""
     conn = sqlite3.connect("campaigns.db")
     c = conn.cursor()
     c.execute("""
@@ -146,7 +129,7 @@ def run_campaign(topic):
     conn.commit()
     conn.close()
 
-    # STEP 6: Return structured data for dashboard
+    # Return in a dictionary format
     return {
         "topic": topic,
         "outline": blog_content.get("outline"),

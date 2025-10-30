@@ -1,0 +1,4 @@
+Python == 3.13python --versino
+flask==3.0.3
+openai==1.42.0
+requests==2.32.3

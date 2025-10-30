@@ -7,3 +7,4 @@ User Input (the campaign topic) --> Generate_content(called within main_campaign
 - Newletters
 - AI summary
 - Performance Chart 
+TO WORK: call app.py, and set OPENAI and GITHUB API keys prior! 

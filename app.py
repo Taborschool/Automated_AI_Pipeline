@@ -2,8 +2,8 @@ from flask import Flask, render_template, request, jsonify
 from main_campaign import run_campaign, init_db
 
 app = Flask(__name__)
-init_db()  # ensure campaigns.db table exists
 
+init_db() 
 @app.route("/")
 def index():
     return render_template("dashboard.html")

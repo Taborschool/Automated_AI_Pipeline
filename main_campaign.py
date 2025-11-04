@@ -114,11 +114,11 @@ def run_campaign(topic):
         print(f"\n📨 Sent newsletter to {contact['email']} ({contact['persona']})")
         print(f"Open Rate: {metrics['open_rate']*100}% | Click Rate: {metrics['click_rate']*100}% | Unsubscribe: {metrics['unsubscribe_rate']*100}%")
 
-    # STEP 4: AI summary from OpenAI
+    # o.AI summary from OpenAI
     summary = generate_summary(performance_data)
     print("\n📊 AI Campaign Summary:\n", summary)
 
-    # STEP 5: Save to local database
+    # Save to local database
     conn = sqlite3.connect("campaigns.db")
     c = conn.cursor()
     for persona, data in performance_data.items():
@@ -129,7 +129,7 @@ def run_campaign(topic):
     conn.commit()
     conn.close()
 
-    # Return in a dictionary format
+   
     return {
         "topic": topic,
         "outline": blog_content.get("outline"),
